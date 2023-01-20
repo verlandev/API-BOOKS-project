@@ -14,6 +14,7 @@ const bookSchema = new mongoose.Schema (
 
         literaryGenre: {
             type: String,
+            enum: ["Fantasía", "Narrativo", "Lírico", "Dramático", "Comedia", "Ciencia Ficción", "Romántico", "Poesía", "Teatro", "Juvenil", "Desarrollo Personal"],
             required: [true, "Debes poner el género del libro"]
 
         },

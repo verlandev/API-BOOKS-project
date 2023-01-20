@@ -5,6 +5,8 @@ const database = require ('./src/utils/database')
 database.connectDB()
 
 const bookRoutes = require('./src/api/books/book.routes')
+const authorRoutes = require('./src/api/authors/author.routes')
+const genresRoutes = require('./src/api/genres/genre.routes')
 const indexRoutes = require('./src/api/index/index.routes')
 
 
@@ -17,6 +19,8 @@ server.use(express.json())
 
 
 server.use('/books', bookRoutes)
+server.use('/authors', authorRoutes)
+server.use('/genres', genresRoutes)
 server.use('/', indexRoutes)
 
 
@@ -36,6 +40,6 @@ server.use((error, req, res, next) => {
 
 
 server.listen(PORT,() => {
-    console.log(`Te escucho en http:localhost:${PORT}`)
+    console.log(`Te escucho en http://localhost:${PORT}`)
 })
 

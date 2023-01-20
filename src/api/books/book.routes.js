@@ -6,9 +6,17 @@ const router = express.Router();
 
 router.get('/', controller.indexGet)
 
-router.get('/create', controller.createPost)
+router.post('/create', controller.createPost)
 
 router.get('/getbyid/:id', controller.getById)
+
+router.get('/getbytitle/:title', controller.getByTitle)
+
+router.get('/getbyauthor/:author', controller.getByAuthor)
+
+router.put('/edit/:id', controller.editPut)
+
+router.delete('/delete/:id', controller.deleteBook)
 
 
 
