@@ -1,8 +1,7 @@
-const express = require ('express');
+const express       = require ('express');
+const controller    = require('./book.controller')
+const router        = express.Router();
 
-const controller = require('./book.controller')
-
-const router = express.Router();
 
 router.get('/', controller.indexGet)
 
@@ -17,7 +16,6 @@ router.get('/getbyauthor/:author', controller.getByAuthor)
 router.put('/edit/:id', controller.editPut)
 
 router.delete('/delete/:id', controller.deleteBook)
-
 
 
 
