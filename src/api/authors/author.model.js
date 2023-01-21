@@ -8,9 +8,9 @@ const authorSchema = new mongoose.Schema(
             required: [true, "Debes poner el nombre del autor"]
         },
 
-        literaryGenre: {
-            type: String,
-            enum: ["Fantasía", "Narrativo", "Lírico", "Dramático", "Comedia", "Ciencia Ficción", "Romántico", "Poesía", "Teatro", "Juvenil", "Desarrollo Personal"]
+        genre: {
+            type: mongoose.Types.ObjectId,
+            ref: "genres"
         },
 
         biography: {

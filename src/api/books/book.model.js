@@ -9,13 +9,16 @@ const bookSchema = new mongoose.Schema (
 
         author: {
             type: String,
-            required: [true, "Debes poner el nombre del autor"],
+           
+            // type: mongoose.Types.ObjectId,
+            // refer:"authors",
+            // required: [true, "Debes poner el nombre del autor"],
         },
 
-        literaryGenre: {
-            type: String,
-            enum: ["Fantasía", "Narrativo", "Lírico", "Dramático", "Comedia", "Ciencia Ficción", "Romántico", "Poesía", "Teatro", "Juvenil", "Desarrollo Personal"],
-            required: [true, "Debes poner el género del libro"]
+        genre: {
+            type: mongoose.Types.ObjectId,
+            ref: "genres",
+            // required: [true, "Debes poner el género del libro"]
 
         },
 
@@ -26,7 +29,7 @@ const bookSchema = new mongoose.Schema (
 
         summary: {
             type: String, 
-            unique: true,
+            // unique: true,
         },
 
         editorial: {

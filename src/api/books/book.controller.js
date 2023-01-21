@@ -1,13 +1,12 @@
-const { nextTick } = require('process');
 const Book = require ('./book.model');
 
 const indexGet = async (req, res, next) =>{
     try{
-        const books = await Book.find();
-        return res.status(200).json(books)
+        const allBooks = await Book.find().populate('genre', {name:1, _id:0});
+        return res.status(200).json(allBooks)
 
     }catch(error){
-        return nextTick(error)
+        return next(error)
     }
 }
 

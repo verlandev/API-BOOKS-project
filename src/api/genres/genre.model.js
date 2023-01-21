@@ -11,9 +11,12 @@ const genreSchema = new mongoose.Schema(
             type: String,
             required: [true, "Debes poner una descripción del género"],
             unique: true
+        },
+
+        books: {
+            type: mongoose.Types.ObjectId,
+            ref: "books"
         }
-
-
 
     },
     {

@@ -2,8 +2,8 @@ const Author = require ('./author.model');
 
 const indexGet = async (req, res, next) => {
     try{
-        const authors = await Author.find();
-        return res.status(200).json(authors)
+        const allAuthors = await Author.find().populate('genre', {name:1, _id:0});
+        return res.status(200).json(allAuthors)
     }catch(error){
         return next(error)
     }

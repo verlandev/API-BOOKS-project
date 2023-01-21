@@ -2,8 +2,8 @@ const Genre = require ('./genre.model')
 
 const indexGet = async (req, res, next) => {
     try{
-        const genres = await Genre.find();
-        return res.status(200).json(genres)
+        const allGenres = await Genre.find().populate('books');
+        return res.status(200).json(allGenres)
 
     }catch(error){
         return next(error)
