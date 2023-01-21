@@ -2,7 +2,7 @@ const Book = require ('./book.model');
 
 const indexGet = async (req, res, next) =>{
     try{
-        const allBooks = await Book.find().populate('genre', {name:1, _id:0});
+        const allBooks = await Book.find().populate('genre', {name:1, _id:0}).populate('author', {name:1, _id:0});
         return res.status(200).json(allBooks)
 
     }catch(error){
