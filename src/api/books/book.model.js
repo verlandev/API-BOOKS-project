@@ -23,6 +23,10 @@ const bookSchema = new mongoose.Schema (
 
         },
 
+        image: {
+            type:String,
+        },
+
         publishedDate: {
             type: Date,
             required: [true, "Debes poner la fecha de publicación"]
