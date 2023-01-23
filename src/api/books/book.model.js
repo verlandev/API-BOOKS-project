@@ -17,10 +17,9 @@ const bookSchema = new mongoose.Schema (
         },
 
         genre: {
-            type: mongoose.Types.ObjectId,
+            type: [mongoose.Types.ObjectId],
             ref: "genres",
             // required: [true, "Debes poner el género del libro"]
-
         },
 
         image: {

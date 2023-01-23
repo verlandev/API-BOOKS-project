@@ -1,8 +1,8 @@
+const LocalStrategy = require('passport-local').Strategy
 const User = require('../../api/users/User.model')
 const bcrypt = require('bcrypt')
 const { isValidEmail, isValidPassword } = require('../validation');
 
-const LocalStrategy = require('passport-local').Strategy
 
 const registerStrategy = new LocalStrategy(
     {
@@ -11,6 +11,7 @@ const registerStrategy = new LocalStrategy(
         passReqToCallback:   true,
 
     }, 
+
     async (req, email, password, done) => {
         try {
           const userDB = await User.findOne({ email: email.toLowerCase() });

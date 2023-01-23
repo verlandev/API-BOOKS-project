@@ -8,9 +8,14 @@ const authorSchema = new mongoose.Schema(
             required: [true, "Debes poner el nombre del autor"]
         },
 
-        genre: {
-            type: mongoose.Types.ObjectId,
+        genres: {
+            type: [mongoose.Types.ObjectId],
             ref: "genres"
+        },
+
+        books: {
+            type: [mongoose.Types.ObjectId],
+            ref: "books"
         },
 
         biography: {
