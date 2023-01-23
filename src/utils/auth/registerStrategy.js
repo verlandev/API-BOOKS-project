@@ -1,4 +1,4 @@
-const User = require('../../api/users/user.model')
+const User = require('../../api/users/User.model')
 const bcrypt = require('bcrypt')
 const { isValidEmail, isValidPassword } = require('../validation');
 
@@ -14,7 +14,7 @@ const registerStrategy = new LocalStrategy(
     async (req, email, password, done) => {
         try {
           const userDB = await User.findOne({ email: email.toLowerCase() });
-  
+            
           if(userDB) {
               const error = new Error('El usuario ya existe');
               return done(error, null);

@@ -13,7 +13,7 @@ const indexGet = async (req, res, next) => {
 const createPost = async (req, res, next) => {
     try{
         console.log(req.body);
-        const genreToBeCreated = new Genre (req.body);
+        const genreToBeCreated = new Genre (req.body); // creo que aquí podría utilizar insertMany para que se impriman los libros por géneros, pero no sé cómo
         const created = await genreToBeCreated.save()
         return res.status(201).json((created))
 
